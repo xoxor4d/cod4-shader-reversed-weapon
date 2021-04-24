@@ -16,16 +16,13 @@
 //#define TECH_SHADOW_SPOT    // spotlight shader + spotlight shadows
 
 // ---- 
-#ifdef TECH_LIT 
-    #define LIT
-    #ifdef TECH_SUN
-        #define SUN
+
+#ifdef TECH_SHADOW_SPOT
+    #ifndef TECH_SPOT // TECH_SHADOW_SPOT needs TECH_SPOT
+        #define TECH_SPOT
     #endif
 #endif
 
-#ifdef TECH_SPOT
-    #define SPOT
-#endif
 // ----
 
 #include <shader_vars.h>
@@ -69,12 +66,12 @@ float4 ps_main(PS_IN i) : COLOR
     float3  reflection_probe_coords = pixel_setup_reflection_coordinates(nrm_world_normal, nrm_world_pos, NH2);
     float4  reflection_sample       = pixel_sample_reflection(reflection_probe_coords, specular_sample.w);
 
-    #if defined(SUN) || defined(LIT)
+    #if defined(TECH_SUN) || defined(TECH_LIT)
         // Phong_SpecularVisibility (CoD2)
 		float sunlight_visibility_spec = lerp(envMapParms.x, envMapParms.y, pow(NdotV, envMapParms.z));
     #endif
 
-    // -----------------------------------------------------------------
+    // ---------
     
     #if defined(TECH_SHADOW_SUN)
         // sample shadow
@@ -82,15 +79,7 @@ float4 ps_main(PS_IN i) : COLOR
     #endif
     
     #if defined(TECH_SHADOW_SPOT)
-        float   shadow_scalar;
-        float4  spotshadow_sample;
-        
-                spotshadow_sample.x = tex2Dproj(shadowmapSamplerSpot, float4(i.world_shadows.w *  spotShadowmapPixelAdjust.xy + i.world_shadows.xy, i.world_shadows.zw)).x;
-                spotshadow_sample.y = tex2Dproj(shadowmapSamplerSpot, float4(i.world_shadows.w * -spotShadowmapPixelAdjust.xy + i.world_shadows.xy, i.world_shadows.zw)).x;
-                spotshadow_sample.z = tex2Dproj(shadowmapSamplerSpot, float4(i.world_shadows.w *  spotShadowmapPixelAdjust.zw + i.world_shadows.xy, i.world_shadows.zw)).x;
-                spotshadow_sample.w = tex2Dproj(shadowmapSamplerSpot, float4(i.world_shadows.w * -spotShadowmapPixelAdjust.zw + i.world_shadows.xy, i.world_shadows.zw)).x;
-        
-                shadow_scalar = lerp(lightprobe_diffuse.w , dot(spotshadow_sample, 0.25), lightSpotFactors.w);
+        float shadow_scalar = pixel_sample_spotshadow(i.world_shadows, lightprobe_diffuse.w);
     #endif
     
     
@@ -100,8 +89,9 @@ float4 ps_main(PS_IN i) : COLOR
     
 	float3  color_combined;
     
+    // ---------
     
-    #ifdef SPOT
+    #ifdef TECH_SPOT
         // setup spotlight
 	    float3  spotlight_direction = lightPosition.xyz + -i.world_pos;
 	    float   distance = length(spotlight_direction); // sqrt(dot(v,v));
@@ -129,17 +119,17 @@ float4 ps_main(PS_IN i) : COLOR
 	            
         color_combined = pixel_calculate_combined_color_lit_spot_shadow(color_sample, spotlight_diffuse, spotlight_specular);
     
-    #else // IF NOT SPOT
+    #else // IF NOT TECH_SPOT
         // calculate sun cosine
         float cosine = pixel_calculate_cosine_sun(reflection_probe_coords, specular_sample.w);
     #endif
     
-    // -----------------------------------------------------------------
+    // ---------
     
-    #if defined(LIT) || defined(SUN)
+    #if defined(TECH_LIT) || defined(TECH_SUN)
         // lit, lit-sun or lit-sun-shadow variants
 
-        #if !defined(LIT) && defined(SUN)
+        #if !defined(TECH_LIT) && defined(TECH_SUN)
             // "disable" lightprobe scalar if not a lit-only shader
 	        lightprobeDiffuse.w = 1.0; 
         #endif
@@ -155,7 +145,7 @@ float4 ps_main(PS_IN i) : COLOR
         color_combined = pixel_calculate_combined_color_lit_sun_shadow(color_sample, sunlight_diffuse, sunlight_specular, lightprobe_diffuse, shadow_scalar);
     #endif 
 
-    // -----------------------------------------------------------------
+    // ---------
 
     #ifdef FOG
         color.xyz = pixel_add_fog_to_final_color(color_combined, i.world_normal.w);
