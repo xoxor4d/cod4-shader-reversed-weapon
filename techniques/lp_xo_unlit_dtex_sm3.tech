@@ -1,0 +1,18 @@
+// https://xoxor4d.github.io/
+// stock :: "vcsh_dtex"
+{
+	stateMap "default";
+
+	vertexShader 3.0 "lp_xo_unlit" // stock "vertcol_simple_fog_dtex.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lp_xo_unlit" // stock "vertcol_shaded_fog.hlsl"
+	{
+		colorMapSampler = material.colorMap;	
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+}

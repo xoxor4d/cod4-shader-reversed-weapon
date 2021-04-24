@@ -1,0 +1,20 @@
+// https://xoxor4d.github.io/
+// stock :: "l_omni_r0c0_dtex"
+{
+	stateMap "additive_stencil";
+
+	vertexShader 3.0 "lp_xo_omni_light" // stock "l_point_tc0_dtex.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lp_xo_omni_light" // stock "l_omni_r0c0.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+}

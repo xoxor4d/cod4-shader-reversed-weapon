@@ -1,0 +1,9 @@
+{
+  "hlsl.preprocessorDefinitions": {
+    "EXCLUDE_SHADERVARS_ON_RELEASE": "1"
+  },
+  "hlsl.additionalIncludeDirectories": [
+    ".",
+    "..\\"
+  ]
+}

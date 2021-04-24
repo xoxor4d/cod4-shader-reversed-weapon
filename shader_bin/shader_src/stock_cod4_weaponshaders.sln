@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_xo_lit_dtex_sm3", "lp_xo_lit_dtex_sm3", "{8A5C6CF6-7565-4B8D-93DB-9CE157229F07}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_xo_lit_dtex_sm3.tech = ..\..\techniques\lp_xo_lit_dtex_sm3.tech
+		ps_3_0_lp_xo_lit.hlsl = ps_3_0_lp_xo_lit.hlsl
+		vs_3_0_lp_xo_lit.hlsl = vs_3_0_lp_xo_lit.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lib", "_lib", "{9C911FE6-D930-4743-88BA-3F31BF2B70A0}"
+	ProjectSection(SolutionItems) = preProject
+		lib\pixel_setup_dtex.hlsl = lib\pixel_setup_dtex.hlsl
+		lib\vertex_setup_dtex.hlsl = lib\vertex_setup_dtex.hlsl
+		lib\vertex_transform.hlsl = lib\vertex_transform.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_header", "_header", "{53336B69-522A-45A2-B890-3E67C6FF0A89}"
+	ProjectSection(SolutionItems) = preProject
+		shader_vars.h = shader_vars.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_techset", "_techset", "{7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techsets\mc_l_hsm_xo_rcs.techset = ..\..\techsets\mc_l_hsm_xo_rcs.techset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lit", "_lit", "{09681920-FE73-430F-9CF9-5F7DAEB2AA5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_xo_lit_sun_dtex_sm3", "lp_xo_lit_sun_dtex_sm3", "{CB6DF58B-DAD9-4FE0-8D08-28ECD767C4A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_xo_lit_sun_dtex_sm3.tech = ..\..\techniques\lp_xo_lit_sun_dtex_sm3.tech
+		ps_3_0_lp_xo_lit_sun.hlsl = ps_3_0_lp_xo_lit_sun.hlsl
+		vs_3_0_lp_xo_lit_sun.hlsl = vs_3_0_lp_xo_lit_sun.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lit_sun", "_lit_sun", "{6B5EB91A-F0FF-429E-A009-E987F03E9058}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_lit_sun_shadow", "_lit_sun_shadow", "{D835C9F3-3B6D-4E7B-914C-D6F6CF24B6B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lit_spot", "lit_spot", "{14A265D3-5A32-471C-94CC-9639E94DF6AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_xo_lit_spot_dtex_sm3", "lp_xo_lit_spot_dtex_sm3", "{8D9E9AF9-0A41-4AA1-813F-BBEF6D99A281}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_xo_lit_spot_dtex_sm3.tech = ..\..\techniques\lp_xo_lit_spot_dtex_sm3.tech
+		ps_3_0_lp_xo_lit_spot.hlsl = ps_3_0_lp_xo_lit_spot.hlsl
+		vs_3_0_lp_xo_lit_spot.hlsl = vs_3_0_lp_xo_lit_spot.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_hsm_xo_lit_sun_shadow_dtex_sm3", "lp_hsm_xo_lit_sun_shadow_dtex_sm3", "{9C812F67-042A-471D-8A14-AF6E5D195CB4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_hsm_xo_lit_sun_shadow_dtex_sm3.tech = ..\..\techniques\lp_hsm_xo_lit_sun_shadow_dtex_sm3.tech
+		ps_3_0_lp_hsm_xo_lit_sun_shadow.hlsl = ps_3_0_lp_hsm_xo_lit_sun_shadow.hlsl
+		vs_3_0_lp_hsm_xo_lit_sun_shadow.hlsl = vs_3_0_lp_hsm_xo_lit_sun_shadow.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lit_spot_shadow", "lit_spot_shadow", "{D844C59F-870A-404F-A276-0736488F85F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_hsm_xo_lit_spot_shadow_dtex_sm3", "lp_hsm_xo_lit_spot_shadow_dtex_sm3", "{EC0E8444-391A-47E5-A2C5-042E6F85B3C7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_hsm_xo_lit_spot_shadow_dtex_sm3.tech = ..\..\techniques\lp_hsm_xo_lit_spot_shadow_dtex_sm3.tech
+		ps_3_0_lp_xo_lit_spot_shadow.hlsl = ps_3_0_lp_xo_lit_spot_shadow.hlsl
+		vs_3_0_lp_xo_lit_spot_shadow.hlsl = vs_3_0_lp_xo_lit_spot_shadow.hlsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__unlit", "__unlit", "{7FE662AC-57DA-4B6F-B7F8-83B55B1F55EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lp_xo_unlit_dtex_sm3", "lp_xo_unlit_dtex_sm3", "{029CF744-CE96-4CC2-9E7C-641203815544}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\techniques\lp_xo_unlit_dtex_sm3.tech = ..\..\techniques\lp_xo_unlit_dtex_sm3.tech
+		ps_3_0_lp_xo_unlit.hlsl = ps_3_0_lp_xo_unlit.hlsl
+		vs_3_0_lp_xo_unlit.hlsl = vs_3_0_lp_xo_unlit.hlsl
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A5C6CF6-7565-4B8D-93DB-9CE157229F07} = {09681920-FE73-430F-9CF9-5F7DAEB2AA5A}
+		{09681920-FE73-430F-9CF9-5F7DAEB2AA5A} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{CB6DF58B-DAD9-4FE0-8D08-28ECD767C4A6} = {6B5EB91A-F0FF-429E-A009-E987F03E9058}
+		{6B5EB91A-F0FF-429E-A009-E987F03E9058} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{D835C9F3-3B6D-4E7B-914C-D6F6CF24B6B6} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{14A265D3-5A32-471C-94CC-9639E94DF6AD} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{8D9E9AF9-0A41-4AA1-813F-BBEF6D99A281} = {14A265D3-5A32-471C-94CC-9639E94DF6AD}
+		{9C812F67-042A-471D-8A14-AF6E5D195CB4} = {D835C9F3-3B6D-4E7B-914C-D6F6CF24B6B6}
+		{D844C59F-870A-404F-A276-0736488F85F0} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{EC0E8444-391A-47E5-A2C5-042E6F85B3C7} = {D844C59F-870A-404F-A276-0736488F85F0}
+		{7FE662AC-57DA-4B6F-B7F8-83B55B1F55EE} = {7A4955E7-E2F2-4C10-8C6B-F8087E8EE31D}
+		{029CF744-CE96-4CC2-9E7C-641203815544} = {7FE662AC-57DA-4B6F-B7F8-83B55B1F55EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F9E19B1-9F71-490D-B315-193A8CD1E8AD}
+	EndGlobalSection
+EndGlobal
